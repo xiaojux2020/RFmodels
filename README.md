@@ -5,6 +5,7 @@ The .7z files are compressed trained random forest models for predicting the num
 The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample implemented on the [Millennium simulation](https://wwwmpa.mpa-garching.mpg.de/millennium/). The inputs are halo internal or/and environmental properties, and the outputs are the number of central or satellite galaxies in each halo. Centrals are predicted by random forest classification, saved in files of name 'cenpred_*.7z'. Satellites are predicted by random forest regression, saved in files of name 'satpred_*.7z'. 
 
 **Required python package: numpy, pandas, pickle.**
+
 **Decompression instruction: Files with name .7z (such as cenpred_all.7z) can be decompressed alone. Files with names .7z.001 and .7z.002 (such as cenpred_in.7z.001 and cenpred_in.7z.002) need to be decompressed together. Decompressed files will be in the type of .sav.** 
 
 All models with different inputs are listed below:
