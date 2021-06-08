@@ -2,8 +2,6 @@
 
 The .sav files are trained random forest models for predicting the number of central and satellite galaxies (above the stellar mass threshold 1.42*10^10M_sun/h) based on input halo internal or environmental properties. Examples of how to load the models are shown in examples.py 
 
-**Required python package: numpy, pandas, pickle.**
-
 The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample implemented on the [Millennium simulation](https://wwwmpa.mpa-garching.mpg.de/millennium/). The inputs are halo internal or/and environmental properties, and the outputs are the number of central or satellite galaxies in each halo. Centrals are predicted by random forest classification, saved in files of name 'cenpred_*.sav'. Satellites are predicted by random forest regression, saved in files of name 'satpred_*.sav'. Models with different input are listed below:
 
 | Model file | Description | Input features |
@@ -14,7 +12,10 @@ The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample 
 | cenpred_ME <br /> satpred_ME| models with halo mass and environment as input | 'mvir','g1_25'|
 | cenpred_non <br /> satpred_non| models with non-tree related halo features (not calculated from the merger tree) as input | 'mvir','vmax','con','total_spin','g1_25'|
           
-**Important: when using the models, the halo features need to be listed in the same order as described above, and the units need to be the same as listed below.**          
+**Important: when using the models, the halo features need to be listed in the same order as described above, and the units need to be the same as listed below.** 
+
+**Required python package: numpy, pandas, pickle.**
+**decompresion instruction:**         
   
            
 Descriptions of halo features:
