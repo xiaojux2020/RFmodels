@@ -1,14 +1,20 @@
-# RFmodels
+# Description
 
-The .7z files are compressed trained random forest models for predicting the number of central and satellite galaxies (above the stellar mass threshold 1.42*10^10M_sun/h) based on input halo internal or environmental properties. Examples of how to load the models are shown in examples.py 
+The .7z files are compressed trained random forest models for predicting the number of central and satellite galaxies (above the stellar mass threshold 1.42*10^10M_sun/h) based on input halo internal or environmental properties. The predicted number of galaxies can then be used to populate dark matter halos to create mock galaxy catalog with the specific stellar mass threshold. For more information about the models, please see arXiv:XXXX. Examples of how to load the models are shown in examples.py 
 
-The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample implemented on the [Millennium simulation](https://wwwmpa.mpa-garching.mpg.de/millennium/). The inputs are halo internal or/and environmental properties, and the outputs are the number of central or satellite galaxies in each halo. Centrals are predicted by random forest classification, saved in files of name 'cenpred_*.7z'. Satellites are predicted by random forest regression, saved in files of name 'satpred_*.7z'. 
+The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample implemented on the [Millennium simulation](https://wwwmpa.mpa-garching.mpg.de/millennium/). The inputs are halo internal or/and environmental properties, and the outputs are the number of central or satellite galaxies in each halo. Centrals are predicted by random forest classification, saved in files of name 'cenpred_*.7z'. Satellites are predicted by random forest regression, saved in files of name 'satpred_*.7z'. Description of each model  and the required input halo properties are listed in the first table below. 
 
-**Required python package: numpy, pandas, pickle.**
+# Load the models 
 
-**Decompression instruction: Files with name .7z (such as cenpred_all.7z) can be decompressed alone. Files with names .7z.001 and .7z.002 (such as cenpred_in.7z.001 and cenpred_in.7z.002) need to be decompressed together. Decompressed files will be in the type of .sav.** 
+The models do not need an installation, and only a few basic python packages are required. **Required python package are: numpy, pandas, pickle.**
 
-All models with different inputs are listed below:
+The models can be directly import once decompressed. **Files with name .7z (such as cenpred_all.7z) can be decompressed alone. Files with names .7z.001 and .7z.002 (such as cenpred_in.7z.001 and cenpred_in.7z.002) need to be decompressed together. Decompressed files will be in the type of .sav.** 
+
+After the decompression, the models can be directly import from python. Examples of how to load the models are shown in examples.py 
+
+# Model details
+
+Models with different sets of input are listed below:
 
 | Model file | Description | Input features |
 | ---------- | ----------- | -------------- |
@@ -20,9 +26,8 @@ All models with different inputs are listed below:
           
 **Important: when using the models, the halo features need to be listed in the same order as described above, and the units need to be the same as listed below.** 
 
-        
-            
-Descriptions of halo features:
+
+# Description of input halo features:
 | Feature | Unit | Descriptions |
 | ------- | ---- | ------------ |
 | 'mvir' | 10^10M_sun/h | viral mass of halo defined as 200 times of critical density. |
