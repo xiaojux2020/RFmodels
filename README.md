@@ -8,7 +8,7 @@ The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample 
 
 The models do not need an installation, and only a few basic python packages are required. **Required python package are: numpy, pandas, pickle.**
 
-**Each model is saved in one folder as compressed file/files. Files in one folder need to be decompressed together. Decompressed files will be in the type of .sav. The model can be directly import once decompressed.** 
+**Each model is saved in one folder as compressed file/files. Files in one folder need to be decompressed together. Decompressed files will be in the type of .sav.** 
 
 After the decompression, the models can be directly import from python. Examples of how to load the models are shown in examples.py 
 
