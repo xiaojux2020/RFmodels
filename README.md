@@ -2,13 +2,13 @@
 
 The .7z files are compressed trained random forest models for predicting the number of central and satellite galaxies (above the stellar mass threshold 1.42*10^10M_sun/h) based on input halo internal or environmental properties. The predicted number of galaxies can then be used to populate dark matter halos to create mock galaxy catalog with the specific stellar mass threshold. For more information about the models, please see arXiv:XXXX. Examples of how to load the models are shown in examples.py 
 
-The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample implemented on the [Millennium simulation](https://wwwmpa.mpa-garching.mpg.de/millennium/). The inputs are halo internal or/and environmental properties, and the outputs are the number of central or satellite galaxies in each halo. Centrals are predicted by random forest classification, saved in files of name 'cenpred_*.7z'. Satellites are predicted by random forest regression, saved in files of name 'satpred_*.7z'. Description of each model  and the required input halo properties are listed in the first table below. 
+The models are trained based on the Guo et al. 2011 semi-analytic galaxy sample implemented on the [Millennium simulation](https://wwwmpa.mpa-garching.mpg.de/millennium/). The inputs are halo internal or/and environmental properties, and the outputs are the number of central or satellite galaxies in each halo. Centrals are predicted by random forest classification, saved in folders named 'cenpred_*'. Satellites are predicted by random forest regression, saved in folders named 'satpred_*'. Description of each model and the required input halo properties are listed in the first table below. 
 
 # Load the models 
 
 The models do not need an installation, and only a few basic python packages are required. **Required python package are: numpy, pandas, pickle.**
 
-The models can be directly import once decompressed. **Files with name .7z (such as cenpred_all.7z) can be decompressed alone. Files with names .7z.001 and .7z.002 (such as cenpred_in.7z.001 and cenpred_in.7z.002) need to be decompressed together. Decompressed files will be in the type of .sav.** 
+**Each model is saved in one folder as compressed file/files. Files in one folder need to be decompressed together. Decompressed files will be in the type of .sav. The model can be directly import once decompressed.** 
 
 After the decompression, the models can be directly import from python. Examples of how to load the models are shown in examples.py 
 
@@ -16,7 +16,7 @@ After the decompression, the models can be directly import from python. Examples
 
 Models with different sets of input are listed below:
 
-| Model file | Description | Input features |
+| Model | Description | Input features |
 | ---------- | ----------- | -------------- |
 | cenpred_all <br /> satpred_all| models with all halo features as input | 'con','mvir','vmax','a05','a08','vpeak','zvpeak','macc','smacc','mergnum',<br /> 'z_firstmerg','z_lastmerg','total_spin','g1_25','g2_5','g5','g10','alpha'|
 | cenpred_top <br /> satpred_top| models with top 4 features as input <br /> for central and satellite separately | cenpred_top: 'vmax','z_lastmerg','mvir','a05' <br /> satpred_top: 'mvir','g2_5','g1_25','con'|
